@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harika Fotoğraf Yükleyici</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="upload-container">
+        <div class="upload-header">
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <h1>Fotoğrafını Yükle</h1>
+            <p>En güzel anlarını seç veya sürükleyip bırak.</p>
+        </div>
+
+        <div class="file-drop-area">
+            <input type="file" id="fileInput" accept="image/*" hidden>
+            <label for="fileInput" class="file-label">
+                <i class="fas fa-camera-retro label-icon"></i>
+                <span class="file-msg">Bir dosya seçin veya buraya sürükleyin</span>
+                <span id="filename" class="filename-display"></span>
+                <span class="browse-btn">Dosya Gözat</span>
+            </label>
+        </div>
+
+        <div class="image-preview-container">
+            <img id="imagePreview" src="#" alt="Seçilen Resim Önizlemesi">
+        </div>
+
+        <div class="progress-area" style="display: none;">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text" id="progressText">0%</span>
+        </div>
+
+         <div class="message-area" id="messageArea">
+         </div>
+
+        <button type="button" id="uploadButton" class="upload-button" disabled>
+            <i class="fas fa-paper-plane"></i> Yükle
+        </button>
+
+        <p class="info-text">İzin verilenler: JPG, PNG, GIF. Maksimum: 10MB.</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
